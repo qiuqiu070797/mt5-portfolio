@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MQL5 / MT5 Development — Portfolio</title>
+<style>
+  :root{
+    --bg:#0d1014; --panel:#151a21; --line:#232b36;
+    --text:#e6edf3; --dim:#8b98a5; --accent:#4ade80; --warn:#f59e0b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font:15px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 24px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:40px}
+  h1{font-size:30px;margin:0 0 10px;letter-spacing:-.5px}
+  .sub{color:var(--dim);font-size:16px;margin:0}
+  h2{font-size:19px;margin:48px 0 16px;letter-spacing:-.2px}
+  h2:first-of-type{margin-top:0}
+  p{margin:0 0 14px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:36px 0 8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .stat b{display:block;font-size:26px;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+  .stat span{color:var(--dim);font-size:13px}
+  figure{margin:0 0 32px}
+  figure img{width:100%;display:block;border:1px solid var(--line);border-radius:10px}
+  figcaption{color:var(--dim);font-size:13px;margin-top:10px;padding-left:2px}
+  ul{margin:0 0 16px;padding-left:20px}
+  li{margin-bottom:8px}
+  code{background:#1b222b;padding:2px 6px;border-radius:4px;font-size:13px;color:#9ae6b4}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+  .card h3{margin:0 0 10px;font-size:15px}
+  .card.yes h3{color:var(--accent)}
+  .card.no h3{color:var(--warn)}
+  .card ul{margin:0;padding-left:18px;font-size:14px}
+  .card li{margin-bottom:6px}
+  footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+         color:var(--dim);font-size:13px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .note{background:#1a1f27;border-left:3px solid var(--warn);padding:14px 16px;
+        border-radius:0 8px 8px 0;color:#c9d4e0;font-size:14px;margin:20px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>MQL5 / MT5 Development</h1>
+  <p class="sub">Expert Advisors, indicators and risk modules for MetaTrader 4 &amp; 5.<br>
+  Plus Python tooling for backtesting and trade-data reconciliation.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>13,417</b><span>lines of trading code shipped</span></div>
+  <div class="stat"><b>33</b><span>files in my own trading terminal</span></div>
+  <div class="stat"><b>3 yrs</b><span>gold risk &amp; order execution on MT5</span></div>
+  <div class="stat"><b>9,984</b><span>backtest parameter combinations run</span></div>
+</div>
+
+<h2>What I build</h2>
+<ul>
+  <li><b>Expert Advisors</b> in native MQL5 / MQL4 using the <code>CTrade</code> class — entry logic, stop loss / take profit, break-even, trailing stop, partial close.</li>
+  <li><b>Risk modules</b> — hard stop loss that cannot be removed from the chart, percentage risk per trade, absolute daily loss limit, overall drawdown guard, Friday close-all.</li>
+  <li><b>On-chart control panels</b> — input fields for price levels, direction, risk settings and time windows; no defaults, the bot does nothing until the user fills them in.</li>
+  <li><b>Session tools</b> — automatic Asia / London / New York high-low lines usable as take-profit targets.</li>
+  <li><b>Indicator work</b> — volume classification, hidden-zone and retest logic, multi-timeframe dashboards.</li>
+  <li><b>MT4 ↔ MT5 conversion</b> — rewriting the trade layer, not patching it.</li>
+  <li><b>Python side</b> — CSV/Excel reconciliation, automated reports, backtest engines.</li>
+</ul>
+
+<h2>My own terminal</h2>
+<p>The screenshots below are from a trading terminal I built and run myself: PHP backend, Python MT5 bridge, vanilla JS charts. It is not a mock-up.</p>
+
+<figure>
+  <img src="assets/terminal.png" alt="Trading terminal dashboard with live quotes">
+  <figcaption>Live dashboard — quotes and session direction for gold, silver, dollar index, majors and oil, pulled from a running MT5 terminal.</figcaption>
+</figure>
+
+<figure>
+  <img src="assets/backtest.png" alt="Backtest workbench showing equity curve and trade markers">
+  <figcaption>Backtest workbench — parameter panel (symbol, timeframe, MA cross, ATR stop/target), price with entry and exit markers, equity curve. Runs on real M1–D1 history and exports an HTML report.</figcaption>
+</figure>
+
+<div class="grid2">
+  <div class="card yes">
+    <h3>What I do</h3>
+    <ul>
+      <li>Write the exact rules you specify</li>
+      <li>Deliver full <code>.mq5</code> source, commented</li>
+      <li>Test on a demo account before delivery</li>
+      <li>Tell you an honest date, not a flattering one</li>
+      <li>Flag it when a requirement cannot work as described</li>
+    </ul>
+  </div>
+  <div class="card no">
+    <h3>What I don't do</h3>
+    <ul>
+      <li>Martingale, grid or averaging systems</li>
+      <li>Promise win rates or monthly returns</li>
+      <li>Crack or bypass protected <code>.ex4</code>/<code>.ex5</code> files</li>
+      <li>Manage accounts or trade on your behalf</li>
+      <li>Give investment advice</li>
+    </ul>
+  </div>
+</div>
+
+<div class="note">
+  <b>On strategy performance.</b> I have spent a long time measuring trading edges, and most retail ideas lose money after spread. I build tools that execute <i>your</i> rules correctly and keep risk under control — I do not sell profit. If you want a system that "wins 90% of the time", I am the wrong developer.
+</div>
+
+<h2>Background</h2>
+<p>Three years as a risk and order-execution specialist at a gold trading firm in Shenzhen: I sat between client orders and the upstream hedge, managing exposure on MT5 every day. That is where the interest in hard risk controls comes from — not from a course, but from watching what happens when a stop loss is optional.</p>
+
+<footer>
+  Best contact is on the platform where you found this page.<br>
+  Source code for this page: <a href="https://github.com/qiuqiu070797">github.com/qiuqiu070797</a>
+</footer>
+
+</div>
+</body>
+</html>
